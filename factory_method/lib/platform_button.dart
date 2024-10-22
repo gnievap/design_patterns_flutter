@@ -10,7 +10,7 @@ class PlatformButton extends StatelessWidget {
   Widget build(BuildContext context) {
 
   // Simulamos la plataforma aquí; en una app real, podrías usar Platform.isAndroid o Platform.isIOS
-  String platformType = "Android";
+  String platformType = "iOS";
   ButtonFactory factory = ButtonFactory();
   Button button = factory.createButton(platformType);
   button.render();
