@@ -19,17 +19,21 @@ class Counter extends ChangeNotifier implements Subject {
     @override
     void attach(Observer observer) {
         _observers.add(observer);
+        print('Observer attached: $observer');
     }
 
     @override
     void detach(Observer observer) {
       _observers.remove(observer);
+      print('Observer detached: $observer');
     }
 
     @override
     void notify() {
+      print('Notifying observers...');
       notifyListeners();
       for (var observer in _observers) {
+        print('Updating observer: $observer');
         observer.update();
       }
     }
